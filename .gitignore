@@ -1,0 +1,18 @@
+# Environment
+.env
+
+# Backups
+backups/
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

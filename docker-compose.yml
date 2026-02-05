@@ -1,0 +1,36 @@
+services:
+  # OpenProject - Project Management
+  openproject:
+    image: openproject/openproject:17
+    container_name: fissio-mgmt
+    ports:
+      - "8082:80"
+    environment:
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE:-fissio_secret_key_change_in_production}
+      - OPENPROJECT_HOST__NAME=${OPENPROJECT_HOST:-localhost:8082}
+      - OPENPROJECT_HTTPS=${OPENPROJECT_HTTPS:-false}
+      - OPENPROJECT_DEFAULT__LANGUAGE=en
+      # Branding
+      - OPENPROJECT_APP__TITLE=Fissio MGMT
+      # Email settings (optional)
+      - OPENPROJECT_SMTP__ADDRESS=${SMTP_ADDRESS:-}
+      - OPENPROJECT_SMTP__PORT=${SMTP_PORT:-587}
+      - OPENPROJECT_SMTP__USER__NAME=${SMTP_USER:-}
+      - OPENPROJECT_SMTP__PASSWORD=${SMTP_PASSWORD:-}
+      # Database settings (uses embedded PostgreSQL by default)
+    volumes:
+      - openproject_pgdata:/var/openproject/pgdata
+      - openproject_assets:/var/openproject/assets
+      - openproject_logs:/var/log/openproject
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health_checks/default"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+volumes:
+  openproject_pgdata:
+  openproject_assets:
+  openproject_logs:
