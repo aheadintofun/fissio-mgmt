@@ -1,46 +1,38 @@
 /* Fissio Dark Theme for OpenProject */
 
 /* === Logo Replacement === */
-.op-app-header__logo,
-.op-header--logo-wrapper,
-.op-logo,
-.logo-wrapper,
-[class*="logo"] img,
-.op-app-header a[href="/"] img,
-header a[href="/"] img {
-    visibility: hidden !important;
-    position: relative !important;
-}
-
-.op-app-header__logo::before,
-.op-header--logo-wrapper::before,
-.op-logo::before,
-.logo-wrapper::before,
-header a[href="/"]::before {
-    content: '' !important;
-    display: block !important;
-    width: 180px !important;
-    height: 40px !important;
+/* Override the OpenProject logo background images with Fissio logo */
+/* Using high specificity selectors to override inline styles */
+body .op-logo--link,
+html body .op-logo--link,
+.op-app-header .op-logo--link,
+[data-color-mode] .op-logo--link,
+.op-logo--link.op-logo--link {
     background-image: url('/fissio-logo.svg') !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: left center !important;
-    visibility: visible !important;
-    position: absolute !important;
-    left: 0 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
 }
 
-/* Mobile logo (smaller) */
-@media (max-width: 768px) {
-    .op-app-header__logo::before,
-    .op-header--logo-wrapper::before,
-    header a[href="/"]::before {
-        width: 40px !important;
-        height: 40px !important;
-        background-image: url('/fissio-logo-icon.svg') !important;
-    }
+body .op-logo--link_high_contrast,
+html body .op-logo--link_high_contrast,
+.op-logo--link_high_contrast.op-logo--link_high_contrast {
+    background-image: url('/fissio-logo.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+}
+
+body .op-logo--icon,
+body .op-logo--icon_white,
+html body .op-logo--icon,
+html body .op-logo--icon_white,
+.op-logo--icon.op-logo--icon,
+.op-logo--icon_white.op-logo--icon_white {
+    background-image: url('/fissio-logo-icon.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
 :root {
@@ -57,6 +49,37 @@ header a[href="/"]::before {
     --fissio-accent-dim: rgba(0, 212, 146, 0.1);
     --fissio-border: #2a2a2a;
     --fissio-border-light: #333333;
+
+    /* Override OpenProject CSS variables for dark theme */
+    --body-background: #0a0a0a !important;
+    --bgColor-default: #0a0a0a !important;
+    --bgColor-inset: #141414 !important;
+    --bgColor-muted: #1a1a1a !important;
+    --bgColor-emphasis: #1e1e1e !important;
+    --fgColor-default: #ffffff !important;
+    --fgColor-muted: #a0a0a0 !important;
+    --fgColor-accent: #00d492 !important;
+    --borderColor-default: #2a2a2a !important;
+    --borderColor-muted: #333333 !important;
+    --button-primary-bgColor-rest: #00d492 !important;
+    --button-primary-bgColor-hover: #00b87a !important;
+    --control-checked-bgColor-rest: #00d492 !important;
+    --control-checked-borderColor-rest: #00d492 !important;
+}
+
+/* Force dark mode */
+[data-color-mode="light"],
+[data-light-theme="light"] {
+    --body-background: #0a0a0a !important;
+    --bgColor-default: #0a0a0a !important;
+    --bgColor-inset: #141414 !important;
+    --bgColor-muted: #1a1a1a !important;
+    --bgColor-emphasis: #1e1e1e !important;
+    --fgColor-default: #ffffff !important;
+    --fgColor-muted: #a0a0a0 !important;
+    --fgColor-accent: #00d492 !important;
+    --borderColor-default: #2a2a2a !important;
+    --borderColor-muted: #333333 !important;
 }
 
 /* === Main Body and Backgrounds === */
