@@ -37,7 +37,7 @@ services:
       - openproject_logs:/var/log/openproject
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80/health_checks/default"]
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health_checks/default"]
       interval: 30s
       timeout: 10s
       retries: 5
