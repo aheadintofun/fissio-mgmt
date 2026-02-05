@@ -8,6 +8,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/fissio-theme.css:/etc/nginx/fissio-theme.css:ro
+      - ./assets:/etc/nginx/assets:ro
     depends_on:
       openproject:
         condition: service_healthy

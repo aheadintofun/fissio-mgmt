@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+  <!-- Fissio Logo - Circle with Triangle + Text -->
+  <circle cx="25" cy="25" r="22" fill="#000000" stroke="#00d492" stroke-width="2"/>
+  <polygon points="25,8 42,42 8,42" fill="#00d492"/>
+  <text x="60" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Fissio MGMT</text>
+</svg>
