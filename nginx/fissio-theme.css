@@ -1,0 +1,400 @@
+/* Fissio Dark Theme for OpenProject */
+
+:root {
+    --fissio-bg-primary: #0a0a0a;
+    --fissio-bg-secondary: #141414;
+    --fissio-bg-tertiary: #1a1a1a;
+    --fissio-bg-card: #1e1e1e;
+    --fissio-bg-hover: #252525;
+    --fissio-text-primary: #ffffff;
+    --fissio-text-secondary: #a0a0a0;
+    --fissio-text-muted: #666666;
+    --fissio-accent: #00d492;
+    --fissio-accent-hover: #00b87a;
+    --fissio-accent-dim: rgba(0, 212, 146, 0.1);
+    --fissio-border: #2a2a2a;
+    --fissio-border-light: #333333;
+}
+
+/* === Main Body and Backgrounds === */
+body, html {
+    background-color: var(--fissio-bg-primary) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+/* === Top Header/Navbar === */
+#top-menu, .op-app-header, header.op-header,
+.toolbar-container, .op-header--logo-wrapper {
+    background-color: var(--fissio-bg-secondary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+.op-app-header__logo,
+.op-header--logo-wrapper img,
+.op-header--logo {
+    filter: brightness(0) invert(1);
+}
+
+/* === Sidebar/Main Menu === */
+#main-menu, .main-menu, .op-sidebar,
+.op-app-menu, .menu-sidebar {
+    background-color: var(--fissio-bg-secondary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+.main-menu--item, .op-sidemenu-item,
+.menu-item, .op-app-menu--item {
+    color: var(--fissio-text-secondary) !important;
+}
+
+.main-menu--item:hover, .op-sidemenu-item:hover,
+.menu-item:hover, .op-app-menu--item:hover {
+    background-color: var(--fissio-bg-hover) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+.main-menu--item.selected, .op-sidemenu-item.selected,
+.menu-item.selected, .op-app-menu--item-active {
+    background-color: var(--fissio-accent-dim) !important;
+    color: var(--fissio-accent) !important;
+    border-left: 3px solid var(--fissio-accent) !important;
+}
+
+/* === Main Content Area === */
+#content, .op-app-content, .work-packages-page,
+.content--main, .work-packages--container {
+    background-color: var(--fissio-bg-primary) !important;
+}
+
+/* === Cards and Panels === */
+.op-card, .card, .panel, .widget-box,
+.work-package-card, .generic-table-container {
+    background-color: var(--fissio-bg-card) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+.panel-heading, .card-header, .widget-header {
+    background-color: var(--fissio-bg-tertiary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+/* === Tables === */
+table, .generic-table, .wp-table {
+    background-color: var(--fissio-bg-card) !important;
+}
+
+thead, th, .generic-table--header, .wp-table--header {
+    background-color: var(--fissio-bg-tertiary) !important;
+    color: var(--fissio-text-secondary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+tbody tr, td, .generic-table--row {
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+tbody tr:nth-child(even), .generic-table--row:nth-child(even) {
+    background-color: var(--fissio-bg-tertiary) !important;
+}
+
+tbody tr:hover, .generic-table--row:hover {
+    background-color: var(--fissio-bg-hover) !important;
+}
+
+/* === Buttons === */
+.button, .btn, button,
+.op-btn, .button--primary {
+    background-color: var(--fissio-accent) !important;
+    border-color: var(--fissio-accent) !important;
+    color: #000000 !important;
+}
+
+.button:hover, .btn:hover, button:hover,
+.op-btn:hover, .button--primary:hover {
+    background-color: var(--fissio-accent-hover) !important;
+    border-color: var(--fissio-accent-hover) !important;
+}
+
+.button--secondary, .btn-secondary {
+    background-color: var(--fissio-bg-hover) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+.button--secondary:hover, .btn-secondary:hover {
+    background-color: var(--fissio-bg-tertiary) !important;
+}
+
+/* === Links === */
+a, .link {
+    color: var(--fissio-accent) !important;
+}
+
+a:hover, .link:hover {
+    color: var(--fissio-accent-hover) !important;
+}
+
+/* === Forms and Inputs === */
+input, select, textarea,
+.form-control, .op-input, .op-select {
+    background-color: var(--fissio-bg-tertiary) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+input:focus, select:focus, textarea:focus,
+.form-control:focus, .op-input:focus {
+    border-color: var(--fissio-accent) !important;
+    box-shadow: 0 0 0 2px var(--fissio-accent-dim) !important;
+    outline: none !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--fissio-text-muted) !important;
+}
+
+label {
+    color: var(--fissio-text-secondary) !important;
+}
+
+/* === Dropdowns and Menus === */
+.dropdown-menu, .op-dropdown, .ui-menu,
+.ng-dropdown-panel, .ng-select-container {
+    background-color: var(--fissio-bg-card) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+.dropdown-item, .op-dropdown--item, .ui-menu-item,
+.ng-option {
+    color: var(--fissio-text-primary) !important;
+}
+
+.dropdown-item:hover, .op-dropdown--item:hover, .ui-menu-item:hover,
+.ng-option:hover, .ng-option-marked {
+    background-color: var(--fissio-bg-hover) !important;
+}
+
+/* === Modals/Dialogs === */
+.op-modal, .modal, .ui-dialog,
+.op-modal--container, .modal-content {
+    background-color: var(--fissio-bg-card) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+.op-modal--header, .modal-header, .ui-dialog-titlebar {
+    background-color: var(--fissio-bg-secondary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+.op-modal--title, .modal-title {
+    color: var(--fissio-text-primary) !important;
+}
+
+/* === Work Packages === */
+.work-package-table, .wp-table--container {
+    background-color: var(--fissio-bg-card) !important;
+}
+
+.wp-table--cell, .wp-table--row {
+    border-color: var(--fissio-border) !important;
+}
+
+/* === Gantt Chart === */
+.gantt-container, .gantt-chart {
+    background-color: var(--fissio-bg-card) !important;
+}
+
+.gantt-task-bar {
+    background-color: var(--fissio-accent) !important;
+}
+
+/* === Status Colors - Keep functional colors but adjust backgrounds === */
+.status-new { background-color: #3498db !important; }
+.status-in-progress { background-color: #f39c12 !important; }
+.status-done, .status-closed { background-color: var(--fissio-accent) !important; }
+.status-rejected { background-color: #e74c3c !important; }
+
+/* === Priority indicators === */
+.priority-high { color: #e74c3c !important; }
+.priority-normal { color: #f39c12 !important; }
+.priority-low { color: var(--fissio-accent) !important; }
+
+/* === Tabs === */
+.op-tab, .nav-tabs .nav-link, .tabrow {
+    background-color: transparent !important;
+    color: var(--fissio-text-secondary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+.op-tab.active, .nav-tabs .nav-link.active, .tabrow.active {
+    background-color: var(--fissio-bg-card) !important;
+    color: var(--fissio-accent) !important;
+    border-bottom-color: var(--fissio-accent) !important;
+}
+
+/* === Breadcrumbs === */
+.breadcrumb, .op-breadcrumb {
+    background-color: transparent !important;
+}
+
+.breadcrumb-item, .op-breadcrumb--item {
+    color: var(--fissio-text-secondary) !important;
+}
+
+.breadcrumb-item a, .op-breadcrumb--item a {
+    color: var(--fissio-accent) !important;
+}
+
+/* === Search === */
+.op-search, .search-input, #quick-search-input {
+    background-color: var(--fissio-bg-tertiary) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+/* === Notifications/Alerts === */
+.notification, .flash, .alert {
+    border-color: var(--fissio-border) !important;
+}
+
+.notification--success, .flash--success, .alert-success {
+    background-color: var(--fissio-accent-dim) !important;
+    border-color: var(--fissio-accent) !important;
+    color: var(--fissio-accent) !important;
+}
+
+.notification--error, .flash--error, .alert-danger {
+    background-color: rgba(231, 76, 60, 0.1) !important;
+    border-color: #e74c3c !important;
+    color: #e74c3c !important;
+}
+
+.notification--warning, .flash--warning, .alert-warning {
+    background-color: rgba(243, 156, 18, 0.1) !important;
+    border-color: #f39c12 !important;
+    color: #f39c12 !important;
+}
+
+/* === Calendar === */
+.fc, .flatpickr-calendar {
+    background-color: var(--fissio-bg-card) !important;
+}
+
+.fc-day, .flatpickr-day {
+    color: var(--fissio-text-primary) !important;
+}
+
+.fc-day:hover, .flatpickr-day:hover {
+    background-color: var(--fissio-bg-hover) !important;
+}
+
+/* === Scrollbars === */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--fissio-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--fissio-border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fissio-text-muted);
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--fissio-text-primary) !important;
+}
+
+p, span, div {
+    color: inherit;
+}
+
+/* === Loading/Spinner === */
+.op-spinner, .loading-indicator {
+    border-color: var(--fissio-accent) !important;
+    border-top-color: transparent !important;
+}
+
+/* === Footer === */
+footer, .op-footer {
+    background-color: var(--fissio-bg-secondary) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-muted) !important;
+}
+
+/* === Wiki/Markdown Content === */
+.wiki, .wiki-content, .op-uc-container {
+    background-color: var(--fissio-bg-card) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+.wiki pre, .wiki code {
+    background-color: var(--fissio-bg-tertiary) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+/* === Avatars === */
+.op-avatar, .avatar {
+    border-color: var(--fissio-border) !important;
+}
+
+/* === Tooltips === */
+.tooltip, .op-tooltip {
+    background-color: var(--fissio-bg-card) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+/* === Empty States === */
+.empty-state, .op-empty-state {
+    color: var(--fissio-text-muted) !important;
+}
+
+/* === Pagination === */
+.pagination {
+    background-color: transparent !important;
+}
+
+.pagination a, .page-link {
+    background-color: var(--fissio-bg-card) !important;
+    border-color: var(--fissio-border) !important;
+    color: var(--fissio-text-primary) !important;
+}
+
+.pagination .active a, .page-item.active .page-link {
+    background-color: var(--fissio-accent) !important;
+    border-color: var(--fissio-accent) !important;
+    color: #000000 !important;
+}
+
+/* === Progress Bars === */
+.progress {
+    background-color: var(--fissio-bg-tertiary) !important;
+}
+
+.progress-bar {
+    background-color: var(--fissio-accent) !important;
+}
+
+/* === Time Entries === */
+.time-entry, .time-entries-container {
+    background-color: var(--fissio-bg-card) !important;
+    border-color: var(--fissio-border) !important;
+}
+
+/* === Repository/Git === */
+.repository, .changeset {
+    background-color: var(--fissio-bg-card) !important;
+}
+
+.diff-added { background-color: rgba(0, 212, 146, 0.2) !important; }
+.diff-removed { background-color: rgba(231, 76, 60, 0.2) !important; }
